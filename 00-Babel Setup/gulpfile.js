@@ -5,12 +5,19 @@
 * @Project: Unlocking Potential
 * @Filename: gulpfile.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T10:18:55+01:00
+* @Last modified time: 2017-06-22T15:53:39+01:00
 */
 
 const gulp = require( 'gulp');
 const babel = require( 'gulp-babel');
+const exec = require('gulp-exec');
+const spawn = require('child_process').spawn;
+let command;
 
+
+/**
+ * Run the transpiler
+ */
 gulp.task( 'es6', () => {
   return gulp.src('src/index.js')
     .pipe(babel({
@@ -19,15 +26,35 @@ gulp.task( 'es6', () => {
     .pipe(gulp.dest('build/js'));
 });
 
+
+/**
+ * Execute the .js with node - saves using any HTML to begin with
+ * and lets us focus on the JavaScript
+ */
 gulp.task('node', () => {
-  exec('node build/js/main.js', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
+
+  if (command) command.kill();
+  command = spawn('node', ['build/js/index.js']);
+  console.log('\033c');
+
+  console.log('JavaScript Output: ');
+  console.log('-----------------------------------------------');
+
+  // SUCCESS
+  command.stdout.on('data', function (data) {
+    console.log(data.toString());
+
   });
+
+  // NOT QUITE A SUCCESS ;)
+  command.stderr.on('data', function (data) {
+    console.log('error: ' + data.toString());
+  });
+
 });
 
+gulp.task('default',[ 'watch' ]);
 
-gulp.task('default',['es6', 'node'], () => {
-  gulp.watch('src/index.js', ['es6']);
+gulp.task('watch', [ 'es6' , 'node'], function() {
+  gulp.watch('src/**/*.js', [ 'default' ]);
 });
