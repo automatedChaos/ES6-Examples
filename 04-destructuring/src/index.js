@@ -5,122 +5,40 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T20:04:51+01:00
+* @Last modified time: 2017-06-22T21:36:47+01:00
 *
-* in this file we will look at functions and the various new features and techniques
-* that have arrived with es6
+* Destructuring is new syntatic feature for es6. Kyle Simpson, author of ES6 & beyond
+* suggests it is easier to think to destructuring as, 'structured assignment'.
+* it acts as a way of packing and unpacking var to pass as input and return params.
+* There is much more to it than that, but its a good start.
 *
 */
 
 
-// Arrow Functions
+// Structured Assignments
 // ----------------------------------------------------------------
-// TODO: Discussion 1 - look at the differences between functions and arrow functions,
-// what are the pros and cons of each?
+// TODO: Activity 1 - Find a better way of assigning the items from the returned
+// array to individual variables - Google de
 
-// Example 1: Standard Function
-var oldLangName = 'ECMAScript (ES5)';    // var is function scope (){} or global
-var oldLangRelDate = 2009
-
-/**
- * outputOldLang - function to output display text for language and released
- * date.
- *
- * @param  {String} string1 the version
- * @param  {String} string2 the release date
- * @return {String}         returns a diplay sentence
- */
-function outputOldLang(string1, string2){
-  var output = string1 + ' was released in ' + string2;
-  return output;
+function programming(){
+  return ['loops', 'conditionals', 'arrays', 'boolean logic', 'string manipulation' ];
 }
 
-// call function
-console.log(outputOldLang( oldLangName, oldLangRelDate ));
-
-
-// Example 2: Arrow Function
-const newLangName = 'ECMAScript 2015 (ES6)';   // const is block scoped and is read-only
-let newLangRelDate = 2015;           // let is block scope {}
-
-
-// Arrow function
-const outputNewLang = (string1, string2) => {
-  let output = string1 + ' was released in ' + string2;
-  return output;
-};
-
-console.log(outputNewLang(newLangName, newLangRelDate));
-
-
-
-// Imediately-Invoked function Expression (IIFE)
-// ----------------------------------------------------------------
-// TODO: Action 1 - Using what you have learnt from the previous activity
-// convert a IIFE into an arrow function (you can use google to help find
-// the answer)
-
-// An IIFE is used to isoloate your script from the rest of the code base.
-// this is especially useful in modules. We will dicuss this in great detail
-// later on. for now it is just best practice to wrap your code in an IIFE to
-// safe guard the code base.
-
-(function() {
-    console.log('This function will run as soon as the IIFE has been parsed and created.');
-})();
+// assign return array to individual vars
+var tmp = programming(), feature1 = tmp[0], feature1 = tmp[3];
 
 // your turn...
 
 
 
 
-// function parameters
-// ----------------------------------------------------------------
-// TODO: Action 2 - The code below loops through an array and calls the function sayItsGood()
-// with each item as a parameter. We can use the es6 spread and rest functionality
-// to greatly improve the readability and efficiency of our code. Research these techniques
-// write a new version of this code below (ps. there are many different ways)
-
-let bestThings = ['promises', 'destructuring', 'OOP Patterns'];
-
-function sayItsGood(thing){
-  console.log(thing + ' are good!')
+// TODO: Discussion 1 - discuss the ordering of the destructuring statement
+function es6(){
+  return {
+    name: 'ECMAScript (ES5)',
+    release: 2009
+  };
 }
 
-for (let i = 0; i < bestThings.length; i++){
-  sayItsGood(bestThings[i]);
-}
-
-
-// heres a clue:
-//console.log(...bestThings);
-
-// your turn...
-
-
-// Added extra: this technique has many applications
-let nums1 = [3, 4, 5];
-let nums2 = [1, 2, ...nums1, 6, 7];
-
-console.log(nums2);
-
-
-
-// TODO: Action 3 - traditionally we use a work around to implement default
-// parameters for a function. The function below demonstrates that work around.
-// write a function that uses es6 instead of the work around.
-
-function repeat(num, word){
-
-  num = num || 3;
-  word = word || 'es6'
-
-  for (let i = 0; i < num; i++){
-    console.log(word);
-  }
-}
-
-repeat();
-repeat(2, 'es5');
-
-// your turn...
+var {name: x, release: y} = es6();
+console.log(x, y);
