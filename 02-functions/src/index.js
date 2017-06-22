@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T17:29:44+01:00
+* @Last modified time: 2017-06-22T17:42:58+01:00
 *
 *
 */
@@ -32,10 +32,18 @@ function outputOldLang(string1, string2){
 console.log(outputOldLang( oldLangName, oldLangRelDate ));
 
 
+// ----------------------------------------------------------------
+// After es6
+const newLangName = 'ECMAScript 2015 (ES6)';   // const is block scoped and is read-only
+let newLangRelDate = 2015;           // let is block scope {}
 
-
-
-
-
+// Action : Discussion - look at the differences between functions and arrow functions,
+// what are the pros and cons of each?
 
 // Arrow function
+let outputNewLang = (string1, string2) => {
+  let output = string1 + ' was released in ' + string2;
+  return output;
+};
+
+console.log(outputNewLang(newLangName, newLangRelDate));
