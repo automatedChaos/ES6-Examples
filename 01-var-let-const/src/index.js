@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T20:09:04+01:00
+* @Last modified time: 2017-06-22T21:44:39+01:00
 *
 * Traditionally we use the var declaration to instanitate variables.
 * In this file we will learn how we can improve on this using const and let
@@ -14,7 +14,7 @@
 
 // Out with the old, in with the new!
 var oldLangName = 'ECMAScript (ES5)';    // var is function scope (){} or global
-var oldLangRelDate = 2009
+var oldLangRelDate = 2009;
 
 function outputOldLang(){
   var output = oldLangName + ' was released in ' + oldLangRelDate;

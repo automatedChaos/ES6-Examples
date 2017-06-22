@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T21:36:47+01:00
+* @Last modified time: 2017-06-22T22:01:10+01:00
 *
 * Destructuring is new syntatic feature for es6. Kyle Simpson, author of ES6 & beyond
 * suggests it is easier to think to destructuring as, 'structured assignment'.
@@ -42,3 +42,41 @@ function es6(){
 
 var {name: x, release: y} = es6();
 console.log(x, y);
+
+// TODO: Activity 2 - What happens when you try to destructure a property that doesn't exist?
+// fix the function below so the destructuring has a default value.
+// note - see the different declaration for the object
+var es5 = {
+  name: 'ECMAScript (ES5)',    // var is function scope (){} or global
+  release: 2009
+}
+
+var {name: a, organisation: b} = es5;
+console.log(a,b);
+
+
+
+// TODO: Activity 3 - Destructuring can be used to match paramters in function calls.
+
+var es5Array = ['ECMAScript (ES5)', 2009];
+
+function outputLang([name, rel]){
+  console.log(`${name} was released in ${rel}`);
+}
+
+outputLang(es5Array);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
