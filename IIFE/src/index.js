@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-21T15:35:52+01:00
+* @Last modified time: 2017-06-22T11:12:30+01:00
 *
 * An Immediately-Invoked Function Expression is used to avoid cross contamination
 * of the global name space. In simple terms it is a function that is called immediately.
@@ -13,9 +13,13 @@
 *
 */
 
+
+
+
 // Before es6
 (function(){
-  console.log('hi');
+
+
 }());
 
 
