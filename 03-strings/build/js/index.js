@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
 * @Author: Alcwyn Parker <alcwynparker>
@@ -7,113 +7,23 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T20:04:51+01:00
+* @Last modified time: 2017-06-22T20:16:44+01:00
 *
-* in this file we will look at functions and the various new features and techniques
-* that have arrived with es6
+* In this file we will dicuss the various improvements in es6 for handling
+* strings.
 *
 */
 
-// Arrow Functions
+// Template literals
 // ----------------------------------------------------------------
-// TODO: Discussion 1 - look at the differences between functions and arrow functions,
-// what are the pros and cons of each?
-
-// Example 1: Standard Function
-var oldLangName = 'ECMAScript (ES5)'; // var is function scope (){} or global
-var oldLangRelDate = 2009;
-
-/**
- * outputOldLang - function to output display text for language and released
- * date.
- *
- * @param  {String} string1 the version
- * @param  {String} string2 the release date
- * @return {String}         returns a diplay sentence
- */
-function outputOldLang(string1, string2) {
-  var output = string1 + ' was released in ' + string2;
-  return output;
-}
-
-// call function
-console.log(outputOldLang(oldLangName, oldLangRelDate));
-
-// Example 2: Arrow Function
-var newLangName = 'ECMAScript 2015 (ES6)'; // const is block scoped and is read-only
-var newLangRelDate = 2015; // let is block scope {}
+// TODO: Activity 1 - Previously, Javascript would become a soup of +'s and
+// inverted commas when it comes to concatenating variables with string literals.
+// Many other languages have much more efficient ways of doing this. Now with es6
+// so does Javascript. Rewrite the example below to incorporate template literals.
 
 
-// Arrow function
-var outputNewLang = function outputNewLang(string1, string2) {
-  var output = string1 + ' was released in ' + string2;
-  return output;
-};
+var customer = { name: "Foo" };
+var card = { amount: 7, product: "Bar", unitprice: 42 };
+var message = "Hello " + customer.name + ",\nwant to buy " + card.amount + " " + card.product + " for\na total of " + card.amount * card.unitprice + " bucks?";
 
-console.log(outputNewLang(newLangName, newLangRelDate));
-
-// Imediately-Invoked function Expression (IIFE)
-// ----------------------------------------------------------------
-// TODO: Action 1 - Using what you have learnt from the previous activity
-// convert a IIFE into an arrow function (you can use google to help find
-// the answer)
-
-// An IIFE is used to isoloate your script from the rest of the code base.
-// this is especially useful in modules. We will dicuss this in great detail
-// later on. for now it is just best practice to wrap your code in an IIFE to
-// safe guard the code base.
-
-(function () {
-  console.log('This function will run as soon as the IIFE has been parsed and created.');
-})();
-
-// your turn...
-
-
-// function parameters
-// ----------------------------------------------------------------
-// TODO: Action 2 - The code below loops through an array and calls the function sayItsGood()
-// with each item as a parameter. We can use the es6 spread and rest functionality
-// to greatly improve the readability and efficiency of our code. Research these techniques
-// write a new version of this code below (ps. there are many different ways)
-
-var bestThings = ['promises', 'destructuring', 'OOP Patterns'];
-
-function sayItsGood(thing) {
-  console.log(thing + ' are good!');
-}
-
-for (var i = 0; i < bestThings.length; i++) {
-  sayItsGood(bestThings[i]);
-}
-
-// heres a clue:
-//console.log(...bestThings);
-
-// your turn...
-
-
-// Added extra: this technique has many applications
-var nums1 = [3, 4, 5];
-var nums2 = [1, 2].concat(nums1, [6, 7]);
-
-console.log(nums2);
-
-// TODO: Action 3 - traditionally we use a work around to implement default
-// parameters for a function. The function below demonstrates that work around.
-// write a function that uses es6 instead of the work around.
-
-function repeat(num, word) {
-
-  num = num || 3;
-  word = word || 'es6';
-
-  for (var _i = 0; _i < num; _i++) {
-    console.log(word);
-  }
-}
-
-repeat();
-repeat(2, 'es5');
-
-// your turn...
+// your turn
