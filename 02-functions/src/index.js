@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T18:09:12+01:00
+* @Last modified time: 2017-06-22T20:03:07+01:00
 *
 * in this file we will look at functions and the various new features and techniques
 * that have arrived with es6
@@ -66,7 +66,61 @@ console.log(outputNewLang(newLangName, newLangRelDate));
 // safe guard the code base.
 
 (function() {
-    console.log('I run as soon as the IIFE has been parsed and created.');
+    console.log('This function will run as soon as the IIFE has been parsed and created.');
 })();
 
-// your turn....
+// your turn...
+
+
+
+
+// function parameters
+// ----------------------------------------------------------------
+// Action: The code below loops through an array and calls the function sayItsGood()
+// with each item as a parameter. We can use the es6 spread and rest functionality
+// to greatly improve the readability and efficiency of our code. Research these techniques
+// write a new version of this code below (ps. there are many different ways)
+
+let bestThings = ['promises', 'destructuring', 'OOP Patterns'];
+
+function sayItsGood(thing){
+  console.log(thing + ' are good!')
+}
+
+for (let i = 0; i < bestThings.length; i++){
+  sayItsGood(bestThings[i]);
+}
+
+
+// heres a clue:
+//console.log(...bestThings);
+
+// your turn...
+
+
+// Added extra: this technique has many applications
+let nums1 = [3, 4, 5];
+let nums2 = [1, 2, ...nums1, 6, 7];
+
+console.log(nums2);
+
+
+
+// TODO: Action - traditionally we use a work around to implement default
+// parameters for a function. The function below demonstrates that work around.
+// write a function that uses es6 instead of the work around.
+
+function repeat(num, word){
+
+  num = num || 3;
+  word = word || 'es6'
+
+  for (let i = 0; i < num; i++){
+    console.log(word);
+  }
+}
+
+repeat();
+repeat(2, 'es5');
+
+// your turn...
