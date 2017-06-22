@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: gulpfile.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T11:05:42+01:00
+* @Last modified time: 2017-06-22T11:36:04+01:00
 */
 
 const gulp = require( 'gulp');
@@ -32,7 +32,7 @@ gulp.task( 'es6', () => {
 gulp.task('node', () => {
 
   command = spawn('node', ['build/js/index.js']);
-
+  console.log('\033c');
   // SUCCESS
   command.stdout.on('data', function (data) {
     console.log('JS OUTPUT:');
@@ -41,7 +41,15 @@ gulp.task('node', () => {
     console.log('--------------------------------');
   });
 
+  // NOT QUITE A SUCCESS ;)
+  command.stderr.on('data', function (data) {
+  console.log('stderr: ' + data.toString());
+  });
+
 });
 
+gulp.task('default',[ 'watch' ]);
 
-gulp.task('default',['es6', 'node']);
+gulp.task('watch', [ 'es6' , 'node'], function() {
+  gulp.watch('src/**/*.js', [ 'default' ]);
+});
