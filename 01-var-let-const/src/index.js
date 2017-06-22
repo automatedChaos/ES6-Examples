@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T16:34:28+01:00
+* @Last modified time: 2017-06-22T17:15:44+01:00
 *
 * Traditionally we use the var declaration to instanitate variables.
 * In this file we will learn how we can improve on this using const and let
@@ -27,15 +27,16 @@ function outputOldLang(){
 
 
 // After es6
-const newLangName = 'ECMAScript 2015 (ES6)';   // this cannot change!
+const newLangName = 'ECMAScript 2015 (ES6)';   // const is block scoped and is read-only
 let newLangRelDate = 2015;           // let is block scope {}
 
 
-// ACTION 1: uncomment the line below, why does this cause an error?
+// ACTION 2: uncomment the line below, why does this cause an error?
 // newLangName = "JavaScript";
 
 
-// ACTION 2:
+// ACTION 3: let signifies a variable that is only accessible in the code block
+// it was instantiates in. Explain why the code below causes and error.
 let a = 5;
 
 if (a > 1){
@@ -48,7 +49,18 @@ if (a > 1){
 
   }
 
-  let c = a + b + j;
-  console.log(c);
+  //let c = a + b + j;
+  //console.log(c);
 
+}
+
+// Action 4: let declarations are only accessible when they appear.
+// var declarations are availabe to the whole scope. In pure es6 the code below
+// would throw an an error. Why do you think this is so? (hint: Google Temporal Dead Zone (TDZ)
+{
+  console.log( var1 );
+  console.log( let1 );
+
+  var var1 = 'Java';
+  let let1 = 'Script';
 }
