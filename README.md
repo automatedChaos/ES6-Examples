@@ -5,9 +5,9 @@
 @Project: Unlocking Potential
 @Filename: README.md
 @Last modified by:   alcwynparker
-@Last modified time: 2017-06-22T20:20:32+01:00
+@Last modified time: 2017-06-22T20:24:09+01:00
 -->
 
 # es6-exercises
 
-run the each script using gulp --silent
+run the examples using gulp --silent to suppress the gulp pipeline info 
