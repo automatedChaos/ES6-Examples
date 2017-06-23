@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T21:44:39+01:00
+* @Last modified time: 2017-06-23T09:35:05+01:00
 *
 * Traditionally we use the var declaration to instanitate variables.
 * In this file we will learn how we can improve on this using const and let
@@ -64,3 +64,9 @@ if (a > 1){
   var var1 = 'Java';
   let let1 = 'Script';
 }
+
+// Basic grammar check:
+//
+// TODO: Action 5 - what is an object literal?
+
+// TODO: Action 6 - what is the difference between an object and an array?
