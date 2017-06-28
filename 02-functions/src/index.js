@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-22T20:04:51+01:00
+* @Last modified time: 2017-06-23T10:58:00+01:00
 *
 * in this file we will look at functions and the various new features and techniques
 * that have arrived with es6
@@ -43,6 +43,7 @@ console.log(outputOldLang( oldLangName, oldLangRelDate ));
 const newLangName = 'ECMAScript 2015 (ES6)';   // const is block scoped and is read-only
 let newLangRelDate = 2015;           // let is block scope {}
 
+const calc = (num1, num2) => {return num1 + num2};
 
 // Arrow function
 const outputNewLang = (string1, string2) => {

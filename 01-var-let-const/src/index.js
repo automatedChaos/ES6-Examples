@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-23T09:35:05+01:00
+* @Last modified time: 2017-06-23T10:19:32+01:00
 *
 * Traditionally we use the var declaration to instanitate variables.
 * In this file we will learn how we can improve on this using const and let
@@ -23,7 +23,7 @@ function outputOldLang(){
 
 // TODO: Action 1 - explain why the statement below causes an error and
 // then fix it so it outputs correctly
-//console.log(output)
+console.log(output)
 
 
 // After es6
@@ -36,7 +36,7 @@ let newLangRelDate = 2015;           // let is block scope {}
 
 
 // TODO: Action 3: let signifies a variable that is only accessible in the code block
-// it was instantiates in. Explain why the code below causes and error.
+// it was instantiated in. Explain why the code below causes and error.
 let a = 5;
 
 if (a > 1){
@@ -70,3 +70,30 @@ if (a > 1){
 // TODO: Action 5 - what is an object literal?
 
 // TODO: Action 6 - what is the difference between an object and an array?
+//
+//
+
+let bike = ['adsfasdf ', 'adsfasdfasdf', 'asdfasdfasdf'];
+bike.push('mondraker');
+
+
+var car = {};
+car.color = 'blue';
+car.numDoors = 4;
+
+
+var car = {
+
+  colors: ['blue', 'red', 'green'],
+  numDoors: 4,
+  drive: function(){
+    console.log('nnnneeeaaahhh!');
+  }
+};
+
+car.drive();
+
+
+console.log(car.colors[0]);
+
+car.speed = 100;
