@@ -1,7 +1,5 @@
 'use strict';
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
 /**
 * @Author: Alcwyn Parker <alcwynparker>
 * @Date:   2017-06-21T15:03:12+01:00
@@ -9,81 +7,63 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-28T15:47:23+01:00
+* @Last modified time: 2017-06-28T20:16:49+01:00
 *
-* Destructuring is new syntatic feature for es6. Kyle Simpson, author of ES6 & beyond
-* suggests it is easier to think to destructuring as, 'structured assignment'.
-* it acts as a way of packing and unpacking var to pass as input and return params.
-* There is much more to it than that, but its a good start.
+* All functiosn in JS have a prototype attribute where properties and behaviours can be
+* attached. Javascript does not allow for classical inheritance like many over programming languages.
+* The prototype attribute allows JS developers to emulate inheritance. This work sheet explores
+* the prototype attribute and how it can be used.
 *
 */
 
-// Structured Assignments
+// A standard function with a prototype behaviour
 // ----------------------------------------------------------------
-// TODO: Activity 1 - Find a better way of assigning the items from the returned
-// array to individual variables - Google de
+// TODO: Activity 1 - Fix the error in the code below.
+// (hint: check the scope of the vars)
+//
+// TODO: Activity 2 - Add a behaviour to the Vehicle prototype that
+// stops the vehicle instantly.
 
-function programming() {
-  return ['loops', 'conditionals', 'arrays', 'boolean logic', 'string manipulation'];
+
+// OBJECT 1
+function Vehicle() {
+  // Constructor --> the function that is called when you instantiate a new object
+  this.name = 'vehicle';
+  this.speedX = 1;
+  this.speedY = 0;
+  this.x = 0;
+  this.y = 0;
 }
 
-// assign return array to individual vars
-var tmp = programming(),
-    feature1 = tmp[0],
-    feature2 = tmp[3];
-
-// your turn...
-
-var _programming = programming(),
-    _programming2 = _slicedToArray(_programming, 5),
-    a = _programming2[0],
-    b = _programming2[1],
-    c = _programming2[2],
-    d = _programming2[3],
-    e = _programming2[4];
-
-console.log(b);
-
-// TODO: Discussion 1 - discuss the ordering of the destructuring statement
-function es6() {
-  return {
-    name: 'ECMAScript (ES5)',
-    release: 2009
-  };
-}
-
-var _es = es6(),
-    x = _es.name,
-    y = _es.release;
-
-console.log(x, y);
-
-// TODO: Activity 2 - What happens when you try to destructure a property that doesn't exist?
-// fix the function below so the destructuring has a default value.
-// note - see the different declaration for the object
-var es5 = {
-  name: 'ECMAScript (ES5)', // var is function scope (){} or global
-  release: 2009
+Vehicle.prototype.move = function () {
+  this.x += this.speedX;
+  this.y += this.speedY;
+  console.log(this.name + '\'s position - x:' + this.x + ', y:' + this.y);
 };
 
-var a = es5.name,
-    _es5$organisation = es5.organisation,
-    b = _es5$organisation === undefined ? 6 : _es5$organisation;
+var v1 = new Vehicle();
 
-console.log(a, b);
+v1.move();
+v1.move();
+v1.move();
 
-// TODO: Activity 3 - Destructuring can be used to match paramters in function calls.
+// Basic inheritance
+// ----------------------------------------------------------------
+// TODO: Activity 3 - There are many different types of vehicle from a unicycle
+// to sports car. The various types of vehicle all need to inheret from the Vehicle
+// class. Make a SuperCar class that inherets from Car.
 
-var es5Array = ['ECMAScript (ES5)', 2009];
 
-function outputLang(_ref) {
-  var _ref2 = _slicedToArray(_ref, 2),
-      name = _ref2[0],
-      rel = _ref2[1];
-
-  console.log(name + ' was released in ' + rel);
+// OBJECT 2
+function Car() {
+  this.name = 'car'; // prototype chain - attributes bubble up through to parents
+  this.colour = 'blue';
+  this.spoiler = true;
+  this.doors = 3;
 }
 
-outputLang(es5Array);
+// This makes the Car class inheret the prototype of vehicle.
+Car.prototype = new Vehicle();
 
-//
+var v2 = new Car();
+v2.move();
