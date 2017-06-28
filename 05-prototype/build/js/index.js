@@ -7,7 +7,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-28T20:20:10+01:00
+* @Last modified time: 2017-06-28T20:24:07+01:00
 *
 * All functiosn in JS have a prototype attribute where properties and behaviours can be
 * attached. Javascript does not allow for classical inheritance like many over programming languages.

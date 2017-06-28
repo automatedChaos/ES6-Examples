@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-28T20:20:10+01:00
+* @Last modified time: 2017-06-28T21:13:47+01:00
 *
 * All functiosn in JS have a prototype attribute where properties and behaviours can be
 * attached. Javascript does not allow for classical inheritance like many over programming languages.
@@ -48,9 +48,24 @@ v1.move();
 v1.move();
 
 
+// ----------------------------------------------------------------
+// TODO: Activity 3 - The JavaScript Math object provides a variety of useful
+// methods and properties to help with most of your math needs. One thing it does
+// not have is a function that picks a random number between a range. Using what
+// you have learnt about the prototype attribute, add the missing functionality
+// to the Math Object and then demonstrate how it can be called in your own code.
+
+
+
+
+
+
+
+
+
 // Basic inheritance
 // ----------------------------------------------------------------
-// TODO: Activity 3 - There are many different types of vehicle from a unicycle
+// TODO: Activity 4 - There are many different types of vehicle, from a unicycle
 // to sports car. The various types of vehicle all need to inheret from the Vehicle
 // class. Make a SuperCar class that inherets from Car.
 
@@ -73,5 +88,5 @@ v2.move();
 
 
 // All objects inherit from object.prototype.
-// TODO: Activity 4 - review the documentation here:
+// TODO: Activity  - review the documentation here:
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
