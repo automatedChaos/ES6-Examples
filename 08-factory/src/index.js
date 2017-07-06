@@ -5,20 +5,24 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-03T21:28:51+01:00
+* @Last modified time: 2017-07-06T21:33:27+01:00
 *
+* The Simple Factory pattern is used when instantiating objects needs to be
+* simplified or where many similar but distinct object need to instantiated
+* and managed
 *
 * This worksheet draws upon the wisdom shared at:
 * http://loredanacirstea.github.io/es6-design-patterns/#factory-method
 *
 */
 
-// Simple Factory
+// TODO: Simple Factory
 // ----------------------------------------------------------------
 //
 // • Review the language used in the comments
 // • Using the simple factory class, create a new Customer.
-// • Remove the static declaration before teh createUser method in the factory class.
+// • Remove the static declaration before the createUser method in the factory class.
+//   Discuss the outcome.
 //
 
 

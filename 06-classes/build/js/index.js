@@ -15,7 +15,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-28T21:04:39+01:00
+* @Last modified time: 2017-06-30T10:11:26+01:00
 *
 * es6 brings a new way to implement the prototype attribute that more closely
 * simulates classical class-like inheritance. It provides a declarative class
@@ -95,3 +95,10 @@ var Car = function (_Vehicle) {
 
 var v2 = new Car();
 v2.move();
+
+// Static
+// ----------------------------------------------------------------
+// TODO: Activity 4 -
+
+
+//

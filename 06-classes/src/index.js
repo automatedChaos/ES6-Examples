@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-06-28T21:09:04+01:00
+* @Last modified time: 2017-06-30T10:11:26+01:00
 *
 * es6 brings a new way to implement the prototype attribute that more closely
 * simulates classical class-like inheritance. It provides a declarative class
@@ -81,13 +81,7 @@ v2.move();
 
 // Static
 // ----------------------------------------------------------------
-// TODO: Activity 3 - There are many different types of vehicle from a unicycle
-// to sports car. The various types of vehicle all need to inheret from the Vehicle
-// class. Make a SuperCar class that inherets from Car.
-
-
-
-
+// TODO: Activity 4 -
 
 
 
