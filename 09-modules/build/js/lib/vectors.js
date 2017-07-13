@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.add = add;
 exports.sub = sub;
+exports.mult = mult;
 /**
 * @Author: Alcwyn Parker <alcwynparker>
 * @Date:   2017-07-04T20:21:03+01:00
@@ -12,7 +13,7 @@ exports.sub = sub;
 * @Project: GiffGaff - SpaceJunk
 * @Filename: vectors.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-06T20:52:00+01:00
+* @Last modified time: 2017-07-07T10:30:00+01:00
 */
 
 /**

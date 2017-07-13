@@ -5,7 +5,7 @@
 * @Project: GiffGaff - SpaceJunk
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-06T21:37:12+01:00
+* @Last modified time: 2017-07-07T10:30:29+01:00
 *
 * Before es6, modules were the domain of commonJS and AMD (Asynchronous Module Design).
 * Node standardised upon the commonJS format. Es6 brings a much simpler but slightly
@@ -27,16 +27,16 @@
 //
 
 
-import * as vector from './lib/vectors';
+import {add, sub, mult} from './lib/vectors';
 import Utility from './lib/utility'
 
 let vec1 = {x: 10, y:5};
 
 let vec2 = {x:2, y: 4};
 
-console.log(vector.add(vec1, vec2));
+console.log(add(vec1, vec2));
 
-console.log(vector.mult(vec1, vec2));       // fix this
+console.log(mult(vec1, vec2));       // fix this
 
 
 let utility = new Utility();

@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: index.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-06T21:33:27+01:00
+* @Last modified time: 2017-07-07T10:19:30+01:00
 *
 * The Simple Factory pattern is used when instantiating objects needs to be
 * simplified or where many similar but distinct object need to instantiated
@@ -54,6 +54,8 @@ class Admin extends User{
 
 // FACTORY CLASS
 class UserFactory{
+
+  let resources = [];
 
   static createUser(type){
 

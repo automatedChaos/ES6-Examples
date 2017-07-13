@@ -5,7 +5,7 @@
 * @Project: GiffGaff - SpaceJunk
 * @Filename: vectors.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-06T20:52:00+01:00
+* @Last modified time: 2017-07-07T10:30:00+01:00
 */
 
 /**
@@ -36,7 +36,7 @@ export function sub(v1, v2){
   return {x: x, y: y};
 }
 
-function mult(v1, v2){
+export function mult(v1, v2){
   let x = v1.x * v2.x;
   let y = v1.y * v2.y;
 
