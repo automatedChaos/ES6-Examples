@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: app.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-13T21:51:27+01:00
+* @Last modified time: 2017-07-14T10:44:50+01:00
 *
 * mongodb://127.0.0.1:27017/
 *
@@ -23,7 +23,7 @@
 
 const express = require('express');
 
-const Resource = require('./models/ResourceModel');                        //*
+const Resource = require('./models/ResourceModel');
 
 //create am instance of express
 let app = express();
@@ -59,7 +59,8 @@ resourceRouter.route('/Resources')
     //let query = req.query;                                                    //*
 
     // now do this
-    // create an empty object                                                   //*
+    // create an empty object
+                                                    //*
     let query = {};
 
     // santize the querys so that just anything can't be thrown in the mix
@@ -72,7 +73,6 @@ resourceRouter.route('/Resources')
     }
 
     if (req.query.read){
-
       query.read = req.query.read;                                              //*
     }
 

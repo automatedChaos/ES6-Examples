@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: app.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-13T21:20:22+01:00
+* @Last modified time: 2017-07-14T10:33:30+01:00
 *
 * mongodb://127.0.0.1:27017/
 *
@@ -55,7 +55,6 @@ let resourceRouter = express.Router();
 resourceRouter.route('/Resources')
   .get((req, res) => {
 
-    console.log('Getting Resources');
     // get all resources
     Resource.find(function(err, resources) {                                    //*
       if(err){                                                                  //*

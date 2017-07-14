@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: app.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-13T22:09:17+01:00
+* @Last modified time: 2017-07-14T10:53:13+01:00
 *
 * mongodb://127.0.0.1:27017/
 *
@@ -23,7 +23,7 @@
 
 const express = require('express');
 
-const Resource = require('./models/ResourceModel');                        //*
+const Resource = require('./models/ResourceModel');
 
 //create am instance of express
 let app = express();
