@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename:
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-14T20:50:27+01:00
+* @Last modified time: 2017-07-14T20:57:32+01:00
 */
 
 const express = require('express');
@@ -55,8 +55,8 @@ var routes = function(){
       if(err){
         res.status(500).send(err); // Send an error code
       }else if (resources){
-
-        req.resources = resource;               // add the book to the req data
+        console.log('Resource Found!');
+        req.resources = resources;               // add the book to the req data
         next();
       }else{
         res.state(404).send('No Resource Found!')
@@ -68,7 +68,7 @@ var routes = function(){
   resourceRouter.route('/Resources/:id')
     .get((req, res) => {
 
-      res.json(req.resource);                                                   /* TODO: Remove original get and add one line. B E A UTIFUL */
+      res.json(req.resources);                                                   /* TODO: Remove original get and add one line. B E A UTIFUL */
 
     })
     .put((req, res) => {
