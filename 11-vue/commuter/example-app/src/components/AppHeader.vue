@@ -30,7 +30,7 @@ export default {
   name: 'app-header',
   data: function() {
     return {
-      title: 'Soothe App',
+      title: 'Commuter App',
       sidedrawerState: false,
       eventBus: this.eventBus
     }

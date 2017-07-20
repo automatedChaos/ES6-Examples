@@ -5,7 +5,7 @@
 * @Project: Unlocking Potential
 * @Filename: app.js
 * @Last modified by:   alcwynparker
-* @Last modified time: 2017-07-13T23:19:09+01:00
+* @Last modified time: 2017-07-20T23:09:06+01:00
 *
 * mongodb://127.0.0.1:27017/
 *
@@ -54,6 +54,26 @@ let port = process.env.PORT || 3000;
 // if there is json in the body then this will make it available using req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
+                                                                                /* TODO: middleware to allow access from another location */
+// Allow from out app
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
 
 // set a default static folder
 app.use('/api', resourceRouter);

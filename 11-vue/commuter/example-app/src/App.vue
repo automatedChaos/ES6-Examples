@@ -28,25 +28,7 @@ html,
 body {
   height: 100%;
   width:100%;
-  animation: colorchange 5s infinite; /* animation-name followed by duration in seconds*/
-         /* you could also use milliseconds (ms) or something like 2.5s */
-  -webkit-animation: colorchange 5s infinite; /* Chrome and Safari */
 }
-@keyframes colorchange
-{
-  0%  {background: #9bffc6;}
-  50%  {background: #f5edfc;}
-  100% {background: #9bffc6;}
-}
-
-@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-{
-  0%  {background: #9bffc6;}
-  50%  {background: #f5edfc;}
-  100% {background: #9bffc6;}
-}
-
-
 
 html,
 body,
